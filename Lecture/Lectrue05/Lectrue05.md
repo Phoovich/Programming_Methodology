@@ -229,12 +229,15 @@ public class temp extends Application {
   - Controller.java
   - Application.java
 
+---
+
 ### CSS
 
 - #### Syntax:
   ```java
   ATTRUBUTE_NAME.setStyle("CSS_1";"CSS_2")
   ```
+
 #### Not use CSS <br>
 
 <img width="343" alt="CSS_1" src="https://github.com/user-attachments/assets/ff61d15b-65aa-44d4-be3c-4297442977d9" />
@@ -272,7 +275,6 @@ signinBtn.setStyle(
 
 <img width="343" alt="CSS_4" src="https://github.com/user-attachments/assets/52ba134c-3db6-4413-a15c-b56b522a606a" />
 
-
 #### set exitButton style <br>
 
 ```java
@@ -283,7 +285,8 @@ exitBtn.setStyle(
     -fx-background-color: darkred;"
 );
 ```
-<img width="343" alt="CSS_5" src="https://github.com/user-attachments/assets/4f3fa12f-2da9-4758-88ae-ca2a4e71b047" />
+
+## <img width="343" alt="CSS_5" src="https://github.com/user-attachments/assets/4f3fa12f-2da9-4758-88ae-ca2a4e71b047" />
 
 ## Binding properties
 
@@ -292,6 +295,7 @@ exitBtn.setStyle(
 ```java
 ATTRUBUTE_NAME.PROPERTY().BINDING_TYOE(ATTRUBUTE_TARGET.PROPERTY());
 ```
+
 - ### bind
 
 ```java
@@ -300,6 +304,7 @@ userNameOut.textProperty().bind(userTextField.textProperty());
 ```
 
 https://github.com/user-attachments/assets/0672a2e8-eead-4beb-a914-c146f3ab70a6
+
 - ### bindBindingrectional
 
 ```java
@@ -309,3 +314,145 @@ pwBox1.textProperty().bindBidirectional(pwBox2.textProperty());
 
 https://github.com/user-attachments/assets/d310ea59-cd80-4850-bc60-7a0bd40d29b3
 
+---
+
+## Event Handling
+
+### Syntax:
+
+```java
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+
+setOn<EVENT_TYPE>(new EventHandler<EVENT_CLASS>(){
+    // event
+    @Override
+    public void handle(ActionEvent event){
+        System.out.println("Hello World");
+    }
+});
+
+```
+
+- **`EVENT_TYPE`**: type of event that the handler processes.
+  - set**OnKeyTyped**: for Key Typed events.
+  - set**OnMouseClicked**: for Mouse Clicked Typed events.
+- **`EVENT_CLASS`**: is the class that defines the event type.
+  - **KeyEvent**: for events related to keyboard input.
+  - **MouseEvent**: for events related to mouse input.
+
+### Example
+
+- press ESC to clear user text field
+
+```java
+userTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent ke) {
+				if (ke.getCode() == KeyCode.ESCAPE) {
+					userTextField.setText("");
+				}
+			}
+		});
+```
+
+- change button width when mouse over
+
+```java
+signinBtn.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				signinBtn.setPrefWidth(75);
+			}
+		});
+
+		signinBtn.setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				signinBtn.setPrefWidth(65);
+			}
+		});
+
+		exitBtn.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				exitBtn.setPrefWidth(75);
+			}
+		});
+
+		exitBtn.setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				exitBtn.setPrefWidth(65);
+			}
+		});
+```
+
+- action when click button
+
+```java
+signinBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Welcome Dialog");
+				alert.setHeaderText(null);
+				alert.setContentText("Welcome, "+userTextField.getText()+". Your Password is "+pwBox.getText()+".");
+				alert.showAndWait(); // wait to click for exit
+
+			}
+		});
+
+		exitBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				primaryStage.close();
+			}
+		});
+
+		Scene scene = new Scene(grid, 350, 300);
+
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("JavaFX Welcome");
+		primaryStage.show();
+	}
+```
+
+## Export Application
+
+1. right click at java application.jar
+2. choose `Runnable JAR file` then click `Next >`
+3. in `Launch configuration:` choose your project name
+4. in `Export destination` it where your save location
+5. click `Finish`
+
+### Run Java Application
+
+```zsh
+java -jar --module-path "<JavaFX_Path>/lib/" --add-modules javafx.controls,javafx.fxml <Application>.jar
+```
+
+### Export Application whit Image
+
+1. right click your java project
+2. click `property`
+3. click `Add Folder` which have your image and click `ok`
+4. click `apply and close`
+5. chang your image path
+
+   ```java
+   String image_path =
+     ClassLoader.getSystemResource("<YOUR_IMAGE_PATH>").toString();
+     ImageView imageView = new ImageView(new Image(image_path));
+
+   ```
+
+6. now you can export normally.
+
+⚠️ Check your image path
+
+```java
+ImageView imageView = new ImageView(new Image("file:res/images/homestay.jpg"));
+// change to
+ImageView imageView = new ImageView(new Image("images/homestay.jpg"));
+```
