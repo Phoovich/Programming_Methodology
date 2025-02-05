@@ -290,11 +290,6 @@ exitBtn.setStyle(
 ```java
 ATTRUBUTE_NAME.PROPERTY().BINDING_TYOE(ATTRUBUTE_TARGET.PROPERTY());
 ```
-
-
-https://github.com/user-attachments/assets/0672a2e8-eead-4beb-a914-c146f3ab70a6
-
-
 - ### bind
 
 ```java
@@ -302,6 +297,7 @@ https://github.com/user-attachments/assets/0672a2e8-eead-4beb-a914-c146f3ab70a6
 userNameOut.textProperty().bind(userTextField.textProperty());
 ```
 
+https://github.com/user-attachments/assets/0672a2e8-eead-4beb-a914-c146f3ab70a6
 - ### bindBindingrectional
 
 ```java
