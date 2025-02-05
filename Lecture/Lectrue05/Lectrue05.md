@@ -213,7 +213,7 @@ public class temp extends Application {
 - Adding the attrubute **`fx:controller`**
 
   - ex `fx:controller = "application.MyController"`
-  - in class MyController `implements Initializable`
+  - in class MyController `implements Initializable`<br>
 
   ```java
   @FXML
