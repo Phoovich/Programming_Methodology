@@ -9,21 +9,20 @@
 ### 🎥 Lecture 5: JavaFX Lecture
 
 - [**JavaFX1 Installation**](https://www.youtube.com/watch?v=3SM6pwrvZGk)
-
-  **Permanent setup for JavaFX (Mac Users)**:
-
-  1. Check your installed JDK location.
-     ![](./img/add_JavaFx/step_1.png) <br><br>
-  2. Click "Add" and select **MacOS X VM**.
-     ![](./img/add_JavaFx/step_2.png)<br><br>
-  3. Set up your JDK path from Step 1, name it, configure default VM arguments, and add external JARs.
-     ![](./img/add_JavaFx/step_3.png) <br><br>
-  4. Finish the setup.
-     ![](./img/add_JavaFx/step_4.png)<br><br>
-
 - [**JavaFX2 Example**](https://www.youtube.com/watch?v=JEBze6Wi-xs)
 - [**JavaFX3 Scene Builder & Event Handling**](https://www.youtube.com/watch?v=5zWU5y_TNHE)
 - [**JavaFX4 Creating a JAR File**](https://www.youtube.com/watch?v=ZE62QWGBKOQ)
+
+**Permanent setup for JavaFX (Mac Users)** in **JavaFX1**:
+
+1. Check your installed JDK location.<br><br>
+   ![](./img/add_JavaFx/step_1.png) <br><br>
+2. Click "Add" and select **MacOS X VM**.<br><br>
+   ![](./img/add_JavaFx/step_2.png)<br><br>
+3. Set up your JDK path from Step 1, name it, configure default VM arguments, and add external JARs.<br><br>
+   ![](./img/add_JavaFx/step_3.png) <br><br>
+4. Finish the setup.<br><br>
+   ![](./img/add_JavaFx/step_4.png)<br><br>
 
 ---
 
@@ -212,7 +211,24 @@ public class temp extends Application {
 - `On Action` to link method
 - Adding the attrubute **`fx:controller`**
 
-  - ex `fx:controller = "application.MyController"`
+  - Ex. `fx:controller = "application.MyController"` <br><br>
+
+  ```java
+  <HBox fx:id="hboxRoot"
+  maxHeight="-Infinity"
+  maxWidth="-Infinity"
+  minHeight="-Infinity"
+  minWidth="-Infinity" spacing="5.0"
+  xmlns="http://javafx.com/javafx/23.0.1"
+  xmlns:fx="http://javafx.com/fxml/1"
+
+  fx:controller="playGround.MyController">
+
+
+
+
+  ```
+
   - in class MyController `implements Initializable`<br><br>
 
   ```java
@@ -226,8 +242,14 @@ public class temp extends Application {
 
 - to Run "MyApplication" **Must include these three things.**
   - SceneBuilder.fxml
+    - `fx:id`
+    - `fx:Controller`
   - Controller.java
+    - `implements Initializable`
+    - must link with fxml file
   - Application.java
+    - method `start`
+    - method `main` --> have `launch(args);`
 
 ---
 
@@ -238,7 +260,7 @@ public class temp extends Application {
   ATTRUBUTE_NAME.setStyle("CSS_1";"CSS_2")
   ```
 
-#### Not use CSS <br>
+#### Not use CSS <br><br>
 
 <img width="343" alt="CSS_1" src="https://github.com/user-attachments/assets/ff61d15b-65aa-44d4-be3c-4297442977d9" />
 
@@ -248,6 +270,7 @@ public class temp extends Application {
 grid.setStyle("-fx-background-color:lightgray;");
 ```
 
+<br>
 <img width="343" alt="CSS_2" src="https://github.com/user-attachments/assets/5c82073f-6427-492e-b2c3-134d7b4e945c" />
 
 #### set scenetitle style <br>
@@ -328,16 +351,17 @@ setOn<EVENT_TYPE>(new EventHandler<EVENT_CLASS>(){
     // event
     @Override
     public void handle(ActionEvent event){
-        System.out.println("Hello World");
+        //action
+       // System.out.println("Hello World");
     }
 });
 
 ```
 
-- **`EVENT_TYPE`**: type of event that the handler processes.
-  - set**OnKeyTyped**: for Key Typed events.
-  - set**OnMouseClicked**: for Mouse Clicked Typed events.
-- **`EVENT_CLASS`**: is the class that defines the event type.
+- **`EVENT_TYPE`** : type of event that the handler processes.
+  - **`setOnKeyTyped`** : for Key Typed events.
+  - **`setOnMouseClicked`** : for Mouse Clicked Typed events.
+- **`EVENT_CLASS`** : is the class that defines the event type.
   - **KeyEvent**: for events related to keyboard input.
   - **MouseEvent**: for events related to mouse input.
 
@@ -392,23 +416,26 @@ signinBtn.setOnMouseEntered(new EventHandler<MouseEvent>() {
 
 ```java
 signinBtn.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("Welcome Dialog");
-				alert.setHeaderText(null);
-				alert.setContentText("Welcome, "+userTextField.getText()+". Your Password is "+pwBox.getText()+".");
-				alert.showAndWait(); // wait to click for exit
+    @Override
+	    public void handle(ActionEvent event) {
 
-			}
-		});
+                // add alert
+		Alert alert = new Alert(AlertType.INFORMATION);
 
-		exitBtn.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				primaryStage.close();
-			}
-		});
+		alert.setTitle("Welcome Dialog");
+		alert.setHeaderText(null);
+		alert.setContentText("Welcome, "+userTextField.getText()+". Your Password is "+pwBox.getText()+".");
+		alert.showAndWait(); // wait to click for exit
+
+		}
+	});
+
+exitBtn.setOnAction(new EventHandler<ActionEvent>() {
+	@Override
+	public void handle(ActionEvent event) {
+		primaryStage.close();
+	    }
+	});
 
 		Scene scene = new Scene(grid, 350, 300);
 
