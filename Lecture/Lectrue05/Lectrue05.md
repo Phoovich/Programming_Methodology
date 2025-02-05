@@ -231,8 +231,10 @@ public class temp extends Application {
 
 ### CSS
 
-- #### Syntax: `ATTRUBUTE_NAME.setStyle("CSS_1";"CSS_2");`
-
+- #### Syntax:
+  ```java
+  ATTRUBUTE_NAME.setStyle("CSS_1";"CSS_2")
+  ```
 #### Not use CSS <br>
 
 <img width="343" alt="CSS_1" src="https://github.com/user-attachments/assets/ff61d15b-65aa-44d4-be3c-4297442977d9" />
