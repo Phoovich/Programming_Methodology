@@ -280,8 +280,7 @@ exitBtn.setStyle(
     -fx-background-color: darkred;"
 );
 ```
-
-![set exitButton style](./img/CSS/CSS_5.png)
+<img width="343" alt="CSS_5" src="https://github.com/user-attachments/assets/4f3fa12f-2da9-4758-88ae-ca2a4e71b047" />
 
 ## Binding properties
 
