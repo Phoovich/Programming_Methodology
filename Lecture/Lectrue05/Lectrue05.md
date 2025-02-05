@@ -291,6 +291,10 @@ exitBtn.setStyle(
 ATTRUBUTE_NAME.PROPERTY().BINDING_TYOE(ATTRUBUTE_TARGET.PROPERTY());
 ```
 
+
+https://github.com/user-attachments/assets/0672a2e8-eead-4beb-a914-c146f3ab70a6
+
+
 - ### bind
 
 ```java
@@ -304,3 +308,6 @@ userNameOut.textProperty().bind(userTextField.textProperty());
 // Bidirectional bindings
 pwBox1.textProperty().bindBidirectional(pwBox2.textProperty());
 ```
+
+https://github.com/user-attachments/assets/d310ea59-cd80-4850-bc60-7a0bd40d29b3
+
