@@ -1,0 +1,14 @@
+package card.type;
+
+import card.base.UnitCard;
+import player.Player;
+
+//You CAN modify the first line
+public class DebuffUnitCard extends UnitCard {	
+	
+	public DebuffUnitCard(String name, String flavorText, int bloodCost, int power, int health, int debuffPower) {
+
+	}	
+	
+	
+}

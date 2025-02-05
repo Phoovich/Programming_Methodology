@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial01/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial02/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial03/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial04/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial05/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial06/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial07/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial08/src"/>
+	<classpathentry excluding="exercise_ToStudent/" kind="src" path="Tutorial2024-Student/2019Tutorial09/src"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial09/src/exercise_ToStudent"/>
+	<classpathentry kind="src" path="Tutorial2024-Student/2019Tutorial10/src"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section01"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section02"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section03"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section04"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section05"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section06"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section07"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section08"/>
+	<classpathentry excluding="exercise_ToStudent/|exercise_SolutionCode/" kind="src" path="Tutorial2024-withSolution/Tutorial2018/section09"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section09/exercise_SolutionCode"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section09/exercise_ToStudent"/>
+	<classpathentry kind="src" path="Tutorial2024-withSolution/Tutorial2018/section10"/>
+	<classpathentry kind="output" path="Tutorial2024-Student/2019Tutorial01/bin"/>
+</classpath>
