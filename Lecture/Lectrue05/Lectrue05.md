@@ -235,7 +235,7 @@ public class temp extends Application {
 
 #### Not use CSS <br>
 
-![Not use Css](./img/CSS/CSS_1.png)
+<img width="343" alt="CSS_1" src="https://github.com/user-attachments/assets/ff61d15b-65aa-44d4-be3c-4297442977d9" />
 
 #### set grid style <br>
 
@@ -243,7 +243,7 @@ public class temp extends Application {
 grid.setStyle("-fx-background-color:lightgray;");
 ```
 
-![set grid style](./img/CSS/CSS_2.png)
+<img width="343" alt="CSS_2" src="https://github.com/user-attachments/assets/5c82073f-6427-492e-b2c3-134d7b4e945c" />
 
 #### set scenetitle style <br>
 
@@ -255,7 +255,7 @@ scenetitle.setStyle(
 );
 ```
 
-![set scenetitle style](./img/CSS/CSS_3.png)
+<img width="343" alt="CSS_3" src="https://github.com/user-attachments/assets/cd4a63b6-cd2e-48b4-b8a9-3e50e2c54fa5" />
 
 #### set signinBtn style <br>
 
@@ -268,7 +268,8 @@ signinBtn.setStyle(
 );
 ```
 
-![set signinBtn style](./img/CSS/CSS_4.png)
+<img width="343" alt="CSS_4" src="https://github.com/user-attachments/assets/52ba134c-3db6-4413-a15c-b56b522a606a" />
+
 
 #### set exitButton style <br>
 
